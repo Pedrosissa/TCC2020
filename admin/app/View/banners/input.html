@@ -1,0 +1,375 @@
+{% extends 'master.html'%} {% block master %}
+<!-- Main content -->
+<div class="content">
+    <div class="container-fluid">
+        <!-- /.col -->
+
+    </div><!-- /.container-fluid -->
+</div><!-- /.content -->
+
+<!--<button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-preview-banners">
+      Launch Default Modal
+    </button>
+  
+    <div class="container-fluid">
+      <div class="card card-success card-outline">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i class="fas fa-edit"></i>
+            SweetAlert2 Examples
+          </h3>
+        </div>
+        <div class="card-body">
+          <button type="button" class="btn btn-success swalDefaultSuccess">
+            Launch Success Toast
+          </button>
+          <button type="button" class="btn btn-info swalDefaultInfo">
+            Launch Info Toast
+          </button>
+          <button type="button" class="btn btn-danger swalDefaultError">
+            Launch Error Toast
+          </button>
+          <button type="button" class="btn btn-warning swalDefaultWarning">
+            Launch Warning Toast
+          </button>
+          <button type="button" class="btn btn-default swalDefaultQuestion">
+            Launch Question Toast
+          </button>
+          <div class="text-muted mt-3">
+            For more examples look at <a href="https://sweetalert2.github.io/">https://sweetalert2.github.io/</a>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="container-fluid">
+      <div class="card card-warning card-outline">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i class="fas fa-edit"></i>
+            Toastr Examples
+          </h3>
+        </div>
+        <div class="card-body">
+          <button type="button" class="btn btn-success toastrDefaultSuccess">
+            Launch Success Toast
+          </button>
+          <button type="button" class="btn btn-info toastrDefaultInfo">
+            Launch Info Toast
+          </button>
+          <button type="button" class="btn btn-danger toastrDefaultError">
+            Launch Error Toast
+          </button>
+          <button type="button" class="btn btn-warning toastrDefaultWarning">
+            Launch Warning Toast
+          </button>
+          <div class="text-muted mt-3">
+            For more examples look at <a href="https://codeseven.github.io/toastr/">https://codeseven.github.io/toastr/</a>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="card card-info">
+            <div class="card-header">
+                <h3 class="card-title">Cadastrar Banner</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col">
+                        <form method="POST" action="" enctype="multipart/form-data">
+                            <div class="form-group">
+                                <label for="descbanner">Descrição</label>
+                                <input type="text" class="form-control" id="descbanner" placeholder="Descrição"
+                                    name="descbanner">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="urlbanner">Link</label>
+                                <input type="text" class="form-control" id="urlbanner" placeholder="Link"
+                                    name="urlbanner">
+                            </div>
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <!-- select -->
+                                    <div class="form-group">
+                                        <label>Status</label>
+                                        <select class="form-control" id="statusbanner" name="statusbanner">
+                                            <option value="1">Ativo</option>
+                                            <option value="0">Inativo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Data inicio:</label>
+                                        <div class="input-group date" id="startdate">
+                                            <input type="date" name="startdate" min="" max="3000-12-31"
+                                                class="form-control" value="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="form-group">
+                                        <label>Data fim:</label>
+                                        <div class="input-group date" id="enddate">
+                                            <input type="date" name="enddate" min="" max="3000-12-31"
+                                                class="form-control" value="0000-00-00">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="banner">Enviar Imagem</label>
+
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="banner" name="banner">
+                                    <label class="custom-file-label" for="banner">Escolher Arquivo</label>
+                                </div>
+                            </div>
+
+                    </div>
+
+                    <div class="col-sm-4 p-0" style="border: 1px solid gray;">
+
+                        <img src="" alt="" class="img-fluid" style="min-width: 100%;
+                        min-height: 364px;
+                        object-fit: cover;">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary">Enviar</button>
+                </div>
+                </form>
+
+                <!-- -->
+                {% if act == 'edit' %}
+                <form method="POST" action="" enctype="multipart/form-data">
+                    <input type="hidden" value="" name="bann_id">
+                    <div class="form-group">
+                        <label for="descbanner">Descrição</label>
+                        <input type="text" class="form-control" id="descbanner" placeholder="Descrição"
+                            name="descbanner" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urlbanner">Link</label>
+                        <input type="text" class="form-control" id="urlbanner" placeholder="Link" name="urlbanner"
+                            value="">
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <!-- select -->
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select class="form-control" id="statusbanner" name="statusbanner">
+                                    <option value="1">Ativo</option>
+                                    <option value="0">Inativo</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Data inicio:</label>
+                                <div class="input-group date" id="startdate">
+                                    <input type="date" name="startdate" min="" max="3000-12-31" class="form-control"
+                                        value="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label>Data fim:</label>
+                                <div class="input-group date" id="enddate">
+                                    <input type="date" name="enddate" min="" max="3000-12-31" class="form-control"
+                                        value="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="banner">Enviar Imagem</label>
+
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="banner" name="banner">
+                            <label class="custom-file-label" for="banner">Escolher Arquivo</label>
+                        </div>
+                    </div>
+
+            </div>
+            <input type="hidden" name="oldbanner" value="<?=  $row->bann_img ?>">
+            <div class="col-sm-4 p-0" style="border: 1px solid gray;">
+
+                <img src="" alt="" class="img-fluid" style="min-width: 100%;
+            min-height: 364px;
+            object-fit: cover;">
+
+            </div>
+        </div>
+        <div class="row">
+            <button class="btn btn-primary">Enviar</button>
+        </div>
+        </form>
+        {% endif %}
+    </div>
+    <!-- /.card-body -->
+    </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(function () {
+        $('.swalDefaultSuccess').click(function () {
+            Toast.fire({
+                icon: 'success',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultInfo').click(function () {
+            Toast.fire({
+                icon: 'info',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultError').click(function () {
+            Toast.fire({
+                icon: 'error',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultWarning').click(function () {
+            Toast.fire({
+                icon: 'warning',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.swalDefaultQuestion').click(function () {
+            Toast.fire({
+                icon: 'question',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+
+        $('.toastrDefaultSuccess').click(function () {
+            toastr.success('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultInfo').click(function () {
+            toastr.info('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultError').click(function () {
+            toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+        $('.toastrDefaultWarning').click(function () {
+            toastr.warning('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+        });
+
+        $('.toastsDefaultDefault').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultTopLeft').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'topLeft',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultBottomRight').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'bottomRight',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultBottomLeft').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                position: 'bottomLeft',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultAutohide').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                autohide: true,
+                delay: 750,
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultNotFixed').click(function () {
+            $(document).Toasts('create', {
+                title: 'Toast Title',
+                fixed: false,
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultFull').click(function () {
+            $(document).Toasts('create', {
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                icon: 'fas fa-envelope fa-lg',
+            })
+        });
+        $('.toastsDefaultFullImage').click(function () {
+            $(document).Toasts('create', {
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                image: '../../dist/img/user3-128x128.jpg',
+                imageAlt: 'User Picture',
+            })
+        });
+        $('.toastsDefaultSuccess').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-success',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultInfo').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-info',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultWarning').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-warning',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultDanger').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-danger',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+        $('.toastsDefaultMaroon').click(function () {
+            $(document).Toasts('create', {
+                class: 'bg-maroon',
+                title: 'Toast Title',
+                subtitle: 'Subtitle',
+                body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+    });
+</script>
+{% endblock %}
